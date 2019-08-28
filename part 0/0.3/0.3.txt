@@ -1,0 +1,28 @@
+
+
+user->Browser:
+note left of Browser
+   filling a new note and presses "save"
+   fullstack-exampleapp.herokuapp.com/notes
+end note
+
+Browser->server:GET  https://fullstack-exampleapp.herokuapp.com/notes
+note over server
+  Server recievs GET request an then send sends reponse (HTML)
+end note
+server->Browser: HTML file
+
+Browser->server:GET https://fullstack-exampleapp.herokuapp.com/main.css
+server->Browser: main.css file
+Browser->server:GET https://fullstack-exampleapp.herokuapp.com/main.js
+server->Browser: main.js file
+
+note over Browser
+  Browser Executes Javascript and requests data.json file
+end note
+Browser->server:GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-> Browser:  data.json
+
+note over Browser
+  Browser renders the page, Since HTML site include notes received from data.json
+end note

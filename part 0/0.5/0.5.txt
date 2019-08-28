@@ -1,0 +1,15 @@
+User->Browser:
+note left of  Browser
+user enters in form displayed on the web page and press "Save"  button
+end note
+
+Browser-> server:POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+
+note over server
+server receives the request with the user input note in the "note" field.  
+server writes the note
+end note
+
+server-->Browser: status 201, Created
+note left of Browser: New added note is Displayed 
